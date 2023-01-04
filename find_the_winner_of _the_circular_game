@@ -1,0 +1,14 @@
+class Solution:
+    def findTheWinner(self, n: int, k: int) -> int:
+        array=[]
+        for i in range(1,n+1):
+            array.append(i)
+        def find_winner(index,k):
+            if len(array)==1:
+                return 
+            else:
+                index=(index+k)%len(array)
+                array.pop(index)
+                find_winner(index,k)
+        find_winner(0,k-1)
+        return array[0]
