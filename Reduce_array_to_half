@@ -1,0 +1,16 @@
+class Solution:
+    def minSetSize(self, arr: List[int]) -> int:
+        dic={}
+        a=0
+        b=0
+        for i in arr:
+            if i not in dic:
+                dic[i]=0
+            dic[i]+=1
+        ar=sorted(dic.values())[::-1]
+        for j in range(len(ar)):
+            a+=ar[j]
+            b+=1
+            if a>=len(arr)/2:
+                break
+        return b
