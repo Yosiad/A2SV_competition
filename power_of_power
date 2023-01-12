@@ -3,3 +3,14 @@ class Solution:
         if n<=0:
             return False
         return (math.log(n,4))%1==0
+
+
+#second solutuin Using recursion is 
+class Solution:
+    def isPowerOfFour(self, n: int) -> bool:
+        if n==1:
+            return True
+        if n<1:
+            return False
+        else:
+            return self.isPowerOfFour(n/4)
